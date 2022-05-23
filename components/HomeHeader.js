@@ -2,7 +2,7 @@ import { View, Text, Image, TextInput } from 'react-native'
 
 import { COLORS, FONTS, SIZES, assets } from '../constants';
 
-const HomeHeader = () => {
+const HomeHeader = ({ onSearch }) => {
   return (
     <View style={{
       backgroundColor: COLORS.primary,
@@ -35,7 +35,7 @@ const HomeHeader = () => {
 
       <View style={{ marginVertical: SIZES.font}}>
         <Text style={{ fontFamily: FONTS.regular, fontSize: SIZES.small, color: COLORS.white}}>
-          Hello, Victoria
+          Hello!
         </Text>
         <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.large, color: COLORS.white, marginTop: SIZES.base / 2}}>
           Let's find a masterpiece
@@ -60,7 +60,7 @@ const HomeHeader = () => {
           <TextInput 
             placeholder='Search NFTs'
             style={{ flex: 1}}
-            onChangeText={() => {}}
+            onChangeText={onSearch}
           />
         </View>
       </View>
