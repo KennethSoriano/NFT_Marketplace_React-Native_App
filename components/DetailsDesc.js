@@ -1,8 +1,7 @@
 import { View, Text } from 'react-native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { EthPrice, NFTTitle } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
-import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
 
 const DetailsDesc = ({ data }) => {
     const [text, setText] = useState(data.description.slice(0, 100));
@@ -35,28 +34,31 @@ const DetailsDesc = ({ data }) => {
                     Description
                 </Text>
                 <View style={{ marginTop: SIZES.base}}>
-                    <Text style={{
-                        fontSize: SIZES.small,
-                        fontFamily: FONTS.regular,
-                        color: COLORS.secondary,
-                        lineHeight: SIZES.large
-                    }}>
+                    <Text 
+                        style={{
+                            fontSize: SIZES.small,
+                            fontFamily: FONTS.regular,
+                            color: COLORS.secondary,
+                            lineHeight: SIZES.large
+                        }}
+                    >
                         {text}
                         {!readMore && '...'}
-                        <Text style={{
-                            fontSize: SIZES.small,
-                            fontFamily: FONTS.semiBold,
-                            color: COLORS.primary,
-                        }}
-                        onPress={() => {
-                            if(!readMore) {
-                                SetText(data.description)
-                                setReadMore(true);
-                            } else {
-                                setText(data.description.slice(0, 100));
-                                setReadMore(false);
-                            }
-                        }}
+                        <Text 
+                            style={{
+                                fontSize: SIZES.small,
+                                fontFamily: FONTS.semiBold,
+                                color: COLORS.primary,
+                            }}
+                            onPress={() => {
+                                if(!readMore) {
+                                    setText(data.description)
+                                    setReadMore(true);
+                                } else {
+                                    setText(data.description.slice(0, 100));
+                                    setReadMore(false);
+                                }
+                            }}
                         >
                             {readMore ? ' Show Less' : ' Read More'}
                         </Text>
@@ -67,4 +69,4 @@ const DetailsDesc = ({ data }) => {
     )
 }
 
-export default DetailsDesc
+export default DetailsDesc;

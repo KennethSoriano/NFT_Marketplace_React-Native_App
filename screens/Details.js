@@ -38,7 +38,8 @@ const Details = ({ route, navigation}) => {
         translucent={true}
       />
 
-      <View style={{
+      <View 
+        style={{
         width: "100%",
         position: "absolute",
         bottom: 0,
@@ -46,7 +47,8 @@ const Details = ({ route, navigation}) => {
         justifyContent: "center",
         backgroundColor: "rgba(255,255,255,0.5)",
         zIndex: 1,
-      }}>
+        }}
+      >
         <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS} />
       </View>
 
@@ -78,7 +80,7 @@ const Details = ({ route, navigation}) => {
         )}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;
